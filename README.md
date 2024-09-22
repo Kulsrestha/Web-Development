@@ -43,7 +43,7 @@ Can look like :-
 Clone the repository and include any component you need in your project:
 
 \`\`\`bash
-git clone https://github.com/yourusername/web-dev-components.git
+git clone (https://github.com/Kulsrestha/Web-Development.git)
 \`\`\`
 
 Simply copy the desired component's HTML, CSS, and JS into your project and enjoy!
@@ -56,30 +56,7 @@ Simply copy the desired component's HTML, CSS, and JS into your project and enjo
 2. Copy the HTML, CSS, and JS files into your project.
 3. Customize the content as needed to fit your design.
 
-Example:
-\`\`\`html
-<!-- Import Hero Section -->
-<section class="hero">
-  <h1>Welcome to Your Awesome Site</h1>
-  <p>Your description goes here...</p>
-</section>
-\`\`\`
 
-\`\`\`css
-/* Style for the Hero Section */
-.hero {
-  background: url('your-image.jpg') no-repeat center center/cover;
-  padding: 100px 0;
-  text-align: center;
-  color: #fff;
-}
-\`\`\`
-
-\`\`\`js
-// Add any necessary JavaScript for interactivity
-\`\`\`
-
----
 
 ## ✨ Features
 - **Responsive Design:** All components are mobile-friendly.

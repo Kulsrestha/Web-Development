@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating element</title>
+    <style>
+        body{
+            background-color: rgb(36, 34, 34);
+        }
+        .language{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="language">
+        <li>C++</li>
+    </ul>
+</body>
+<script>
+    function createEl(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    createEl('JavaScript');
+    createEl('Html');
+
+
+    function optimisedCreateEl(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    optimisedCreateEl('Css');
+    optimisedCreateEl('Python');
+</script>
+</html>

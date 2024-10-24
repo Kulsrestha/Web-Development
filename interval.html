@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout</title>
+</head>
+<body>
+    <h1>Interval 0</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const sayHello = function(){
+        console.log('hello');
+    }
+    let count =0
+    const changeText = function(){
+        count++
+        document.querySelector('h1').innerHTML = `Interval ${count}`;
+    }
+
+    let changeHandler = setInterval(changeText,1000);
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(changeHandler);
+        console.log('stopped');
+    })
+    document.querySelector('#start').addEventListener('click',function(){
+        // setInterval(changeHandler);
+        changeHandler = setInterval(changeText,1000);
+        console.log('started');
+    })
+</script>
+</html>

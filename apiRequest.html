@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request</title>
+</head>
+<style>
+    body {
+        background-color: #212121;
+        color: #fff;
+    }
+
+    .card {
+        width: 300px;
+        margin: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #333;
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    button {
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: #00bcd4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0097a7;
+    }
+</style>
+<body>
+    <div class="card">
+        <img id="avatar" src="img_avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b id="username">Username will appear here</b></h4>
+          <p id="followers">Followers will appear here</p>
+        </div>
+    </div>
+    <button id="show-data">Show User Data</button>
+<script>
+    const button = document.getElementById('show-data');
+    button.addEventListener('click',function(){
+        const requestUrl ='https://api.github.com/users/kulsrestha';
+        const xhr = new XMLHttpRequest();   //this was used before fetch api came
+        xhr.open('GET',requestUrl);
+        // console.log("Here");
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4){
+                const data = JSON.parse(this.responseText);
+                document.getElementById('username').textContent = data.login;
+                document.getElementById('followers').textContent = `Followers : ${data.followers}`;
+                document.getElementById('avatar').src = data.avatar_url;
+            }
+        };
+        xhr.send();
+    });
+
+</script>
+</html>
